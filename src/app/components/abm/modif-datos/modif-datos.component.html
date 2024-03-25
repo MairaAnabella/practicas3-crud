@@ -1,0 +1,41 @@
+
+
+<div class="container">
+    <h2 mat-dialog-title>Modificacion</h2>
+    <mat-dialog-content>
+      <mat-form-field style="margin-left: 7%">
+        <mat-label>Nombre:</mat-label>
+        <input matInput #input type="text" [(ngModel)]="nombre" />
+        <!-- <mat-hint align="end">{{ input.value.length }}/10</mat-hint> -->
+      </mat-form-field>
+  
+      <mat-form-field style="margin-left: 7%">
+        <mat-label>Apellido:</mat-label>
+        <input matInput #input type="text" [(ngModel)]="apellido" />
+        <!--    <mat-hint align="end">{{ input.value.length }}/10</mat-hint> -->
+      </mat-form-field>
+  
+      <mat-form-field style="margin-left: 7%">
+        <mat-label>Email:</mat-label>
+        <input matInput #input [(ngModel)]="email" type="text" />
+        <!-- <mat-hint align="end">{{ input.value.length }}/10</mat-hint> -->
+      </mat-form-field>
+
+  
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="fecha" />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      <mat-dialog-content class="button-sample">
+        <button mat-raised-button class="btn" (click)="modificarDatos()">
+          Modificar
+        </button>
+        <button  (click)="onNoClick()" class="btn">Cancelar</button>
+      </mat-dialog-content>
+    </mat-dialog-content>
+  </div>
+  
