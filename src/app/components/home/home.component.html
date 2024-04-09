@@ -20,7 +20,7 @@
         <th  scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Email</th>
-        <th scope="col">Fecha de ingreso</th>
+        <th scope="col">Fecha de ingreso</th> 
         <th scope="col">Acciones</th>
       </tr>
     </thead>
@@ -30,9 +30,9 @@
         <td >{{ dato.nombre}}</td>
         <td>{{ dato.apellido}}</td>
         <td>{{ dato.email}}</td>
-        <td>{{ dato.fecha}}</td>
+         <td>{{ dato.fecha}}</td> 
         <td><button class="btn-accion" (click)="OnEdit(dato)">edit</button>
-          <button class="btn-accion" (click)="onDelete(dato)">delete</button>
+          <button class="btn-accion" (click)="onDelete(dato['id'])">delete</button>
         </td>
        <!-- NO SE ENCUENTRAN DATOS PARA EL FILTRO -->
       </tr>

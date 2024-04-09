@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ModUserService {
-  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+  private baseURI: string = "https://seccionales.unionferroviaria.org.ar/app/mutual/pp3/"; /* esta es la url del servidor */
 
   //el httpClient es la '''libreria''' para enviar los datos al servidor
   constructor(private http:HttpClient) { }

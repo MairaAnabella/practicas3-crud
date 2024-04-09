@@ -38,6 +38,7 @@ import { ModUserService } from '../../../service/mod-user.service'; // servicio 
 export class ModifDatosComponent {
   // Declaración de un EventEmitter para emitir un evento cuando se complete la inserción de datos
   datosInsertados: EventEmitter<void> = new EventEmitter<void>();
+ 
 
   /* Declaracion de variables */
   id:number=0;
@@ -64,10 +65,7 @@ export class ModifDatosComponent {
     //console.log('constructor', this.id)
   }
 
-  /* este es una funcion que inicia cuando se carga el componente */
-  ngOnInit() {
-   // console.log('Datos recibidos en el diálogo:', this.data);
-  }
+
 
   onNoClick(): void {
     this.dialogRef.close();

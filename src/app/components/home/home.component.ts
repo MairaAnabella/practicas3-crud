@@ -5,7 +5,6 @@ import {MatTableModule} from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableConfig } from '../../models/table.config.model';
 import { TableAction } from '../../models/table.action.model';
-import { TABLE_ACTION } from '../../enum/table-actions.enum';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
@@ -15,6 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { InsertDatosComponent } from '../abm/insert-datos/insert-datos.component';//ESTOS DOS SON LOS COMPONETES MODAL
 import { ModifDatosComponent } from '../abm/modif-datos/modif-datos.component'; // UMO DE INSERT Y OTRO DE MODIF
+import { DeleteDatosComponent } from '../abm/delete-datos/delete-datos.component';
+
 // NO PUEDEN FALTAR SI NO ES IMPOSIBLE HACER USO DE LOS MISMOS
 
 @Component({
@@ -29,7 +30,7 @@ import { ModifDatosComponent } from '../abm/modif-datos/modif-datos.component'; 
 
 //EL ONiNIT DE LA CLASE ES PORQUE USAMOS UNA CARGA NI BIEN INICIA
 export class HomeComponent implements OnInit {
-  private baseURI: string = "http://localhost/proyecto-crud/";
+  private baseURI: string = "https://seccionales.unionferroviaria.org.ar/app/mutual/pp3/";
  
   datos:MatTableDataSource<any>;// SE DEFINE LOS DATOS DE LA TABLA
   defineColumnas:string[]=['nombre','apellido','email','fecha'];// SE DEFINE LAS COLUMNAS
@@ -72,7 +73,6 @@ export class HomeComponent implements OnInit {
       .subscribe((resp) => {
         if (resp && resp.length > 0) {
           this.datos.data = resp; // GUARDAMOS EN NUESTRA VARIABLE LA RESPUESTA LA TRAE EN ARRAY ASOCIATIVO
-          console.log(resp)
         } else {
           console.log('No se encontraron datos.');
         }
@@ -112,9 +112,15 @@ OnEdit(row:any){
 // ESTA FUNCION  PUEDEN USAR PARA ELIMINAR LOS DATOS 
 /* LE RECOMIENDO USEN ALGUN ALERT QUE SOLO DIGA ESTA SEGURO QUE QUIERE ELIMINAR Y DENTRO DE ESTA FUNCION HAGAN
 EL LLAMADO AL PHP QUE BORRA MAS SENCILLO O CREAN UN COMPONENTE ELIMINAR  */
-onDelete(row:any){
- 
-  console.log(row, 'eliminar')
+onDelete(id:any){
+  const dialogRef = this.dialog.open(DeleteDatosComponent, {
+    data: id // Pasar los datos a través de la opción 'data'
+  });
+  dialogRef.componentInstance.datosEliminados.subscribe(() => {
+    // Cuando se emite el evento de datos insertados, volver a cargar los datos de la tabla
+    this.solicitarDatos();
+  });
+
 
 }
 

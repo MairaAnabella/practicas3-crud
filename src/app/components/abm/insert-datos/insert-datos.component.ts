@@ -35,9 +35,7 @@ import { RegistroUserService } from '../../../service/registro-user.service'; //
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule,
-    
-   
+    FormsModule,  
   ],
   templateUrl: './insert-datos.component.html',
   styleUrl: './insert-datos.component.css',

@@ -8,7 +8,7 @@ export class RegistroUserService {
   /* ESTE SERVICIO ES EXACTAMNETE IGUAL AL DE MODIFICACION SOLO QUE LLAMA AL PHP QUE SUBE POR PRIMERA
   VEZ LOS DATOS */
 
-  private baseURI = 'http://localhost/proyecto-crud/';
+  private baseURI: string = "https://seccionales.unionferroviaria.org.ar/app/mutual/pp3/";
 
   constructor(private http:HttpClient) { }
 
