@@ -30,7 +30,7 @@ import { DeleteDatosComponent } from '../abm/delete-datos/delete-datos.component
 
 //EL ONiNIT DE LA CLASE ES PORQUE USAMOS UNA CARGA NI BIEN INICIA
 export class HomeComponent implements OnInit {
-  private baseURI: string = "https://seccionales.unionferroviaria.org.ar/app/mutual/pp3/";
+  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
  
   datos:MatTableDataSource<any>;// SE DEFINE LOS DATOS DE LA TABLA
   defineColumnas:string[]=['nombre','apellido','email','fecha'];// SE DEFINE LAS COLUMNAS
