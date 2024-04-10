@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DeleteService {
-  private baseURI: string = "https://seccionales.unionferroviaria.org.ar/app/mutual/pp3/";
+  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
   constructor(public http:HttpClient) { }
 
   delete(id:Number){
