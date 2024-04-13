@@ -8,7 +8,8 @@ export class RegistroUserService {
   /* ESTE SERVICIO ES EXACTAMNETE IGUAL AL DE MODIFICACION SOLO QUE LLAMA AL PHP QUE SUBE POR PRIMERA
   VEZ LOS DATOS */
 
-  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+    //private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+    private baseURI = 'https://crudpp3.000webhostapp.com/';
 
   constructor(private http:HttpClient) { }
 

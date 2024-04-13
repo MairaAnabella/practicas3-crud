@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ModUserService {
-  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+    //private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+    private baseURI = 'https://crudpp3.000webhostapp.com/';
 
   //el httpClient es la '''libreria''' para enviar los datos al servidor
   constructor(private http:HttpClient) { }

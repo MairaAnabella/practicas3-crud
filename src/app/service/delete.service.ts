@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DeleteService {
-  private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+  //private baseURI = 'http://localhost/proyecto-crud/'; /* esta es la url del servidor */
+  private baseURI = 'https://crudpp3.000webhostapp.com/';
   constructor(public http:HttpClient) { }
 
   delete(id:Number){
